@@ -41,7 +41,6 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public boolean eliminarCliente(Long codigoUnico) {
         try {
-           // clienteRepository.deleteById(codigoUnico);
             clienteRepository.findById(codigoUnico).ifPresent(clienteRepository::delete);
             return true;
         }catch (Exception e){
